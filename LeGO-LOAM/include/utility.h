@@ -57,12 +57,20 @@ extern const string imuTopic = "/imu/data";
 extern const string fileDirectory = "/tmp/";
 
 // VLP-16
-extern const int N_SCAN = 16;
+//extern const int N_SCAN = 16;
+//extern const int Horizon_SCAN = 1800;
+//extern const float ang_res_x = 0.2;
+//extern const float ang_res_y = 2.0;
+//extern const float ang_bottom = 15.0+0.1;
+//extern const int groundScanInd = 7;
+
+// VLP-32c
+extern const int N_SCAN = 32;
 extern const int Horizon_SCAN = 1800;
 extern const float ang_res_x = 0.2;
-extern const float ang_res_y = 2.0;
-extern const float ang_bottom = 15.0+0.1;
-extern const int groundScanInd = 7;
+extern const float ang_res_y = 40.0/float(N_SCAN-1);
+extern const float ang_bottom = 25.0;
+extern const int groundScanInd = 20;
 
 // HDL-32E
 // extern const int N_SCAN = 32;
@@ -121,7 +129,7 @@ extern const float historyKeyframeSearchRadius = 7.0; // key frame that is withi
 extern const int   historyKeyframeSearchNum = 25; // 2n+1 number of hostory key frames will be fused into a submap for loop closure
 extern const float historyKeyframeFitnessScore = 0.3; // the smaller the better alignment
 
-extern const float globalMapVisualizationSearchRadius = 500.0; // key frames with in n meters will be visualized
+extern const float globalMapVisualizationSearchRadius = 1000.0; // key frames with in n meters will be visualized
 
 
 struct smoothness_t{ 
